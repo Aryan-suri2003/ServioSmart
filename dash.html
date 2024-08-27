@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sidebar</title>
+  <link rel="stylesheet" href="dash.css">
+</head>
+<body>
+  <div id="nav">
+    <h2 >ServioSmart</h2>
+  </div>  
+<div style="display: flex;"> 
+  <div class="sidebar">
+    <ul>
+      <li id="services">  <a href="servicespage.html" style="text-decoration: none; color: rgb(255, 255, 255);"> Services</a></li>
+      <li>Payment</li>
+      <li>History</li>
+      <li>Tracking</li>
+      <li>Help</li>
+      <li id="reviews" style="background-color: #04add3;">Reviews</li>
+    </ul>
+  </div>
+  <div id="page">
+    <div></div>
+    <div id="first-div">
+      <div id="one-side">
+        <div id="text-second">
+          Have you used this website<br>
+        </div>
+        <div id="text-second2">
+          Rate Now
+        </div>
+        <div id="rating-stars">
+          <span onclick="glowingstar(1)" class="star">★
+          </span>
+          <span onclick="glowingstar(2)" class="star">★
+          </span>
+          <span onclick="glowingstar(3)" class="star">★
+          </span>
+          <span onclick="glowingstar(4)" class="star">★
+          </span>
+          <span onclick="glowingstar(5)" class="star">★
+          </span>
+        </div>
+        <div id="rating-number">
+          <h3 id="output">
+  
+          </h3>
+        </div>
+  
+        <div id="add-rev">
+          <button id="mypopup" onclick="openPopup()">Add Reviews</button>
+        </div>
+      </div>
+      <div id="myPopup" class="popup">
+        <div class="popup-content">
+          <h2 id="h2">Add your Reviews</h2>
+          <h3 id="h3">Enter your Name:</h3>
+          <input type="text" id="name1" placeholder="Name" required>
+          <br><br>
+          <h3 id="h3">Add suggestions:</h3>
+          <textarea name="Enter suggestions" id="suggestion" cols="45" rows="4"></textarea>
+          <div style="display: flex; margin-left: 20px;">
+          <div id="send-btn1"><button onclick="closePopup();addSuggestion();" id="send-btn">Send Review</button></div>
+          <div id="send-btn1"><button onclick="closePopup();" id="send-btn">Maybe Later</button></div>
+          </div>  
+        </div>
+      </div>
+  
+      <div id="second-side">
+        <div class="all-skill">
+          <div class="skill">
+            <div class="html">
+              Features
+              <span class="html-1">
+                <span>
+                  <hr class="html-red">
+                </span>
+                <span>
+                  <hr class="html-grey">
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="html">
+              Security
+              <span class="html-1">
+                <span>
+                  <hr class="css-red">
+                </span>
+                <span>
+                  <hr class="css-grey">
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="html">
+              Customer Support
+              <span class="html-1">
+                <span>
+                  <hr class="js-red">
+                </span>
+                <span>
+                  <hr class="js-grey">
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="html">
+              Ese of Use
+              <span class="html-1">
+                <span>
+                  <hr class="js-red1">
+                </span>
+                <span>
+                  <hr class="js-grey1">
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div id="commentBox">
+      <div id="commentHead">
+        <h2 style="color: rgb(255, 255, 255);">Ratings & Reviews</h2>
+        <hr>
+      </div>
+        <div id="comments">
+          <div id="suggesstion-box">
+          
+          </div>
+        </div>
+    </div>
+  </div>  
+</div>  
+<div id="footer" style="color: aliceblue; font-weight: bolder; display: flex; align-items: center; justify-content: center;">Copyright Since 2022</div>  
+</body>
+
+<script>
+   const button = document.getElementById('services');
+   button.addEventListener('click', function() {
+   button.style.backgroundColor = '#3787af';
+});
+
+
+
+  // To access the stars
+  let stars = 
+      document.getElementsByClassName("star");
+  let output = 
+      document.getElementById("output");
+   
+  // Funtion to update rating
+  function glowingstar(n) {
+      remove();
+      for (let i = 0; i < n; i++) {
+          if (n == 1) cls = "one";
+          else if (n == 2) cls = "two";   // cls is a variable that holds css class name
+          else if (n == 3) cls = "three";
+          else if (n == 4) cls = "four";
+          else if (n == 5) cls = "five";
+          stars[i].className = "star " + cls;
+      }
+      if(n==1) output.innerText = "Poor😡";
+      if(n==2) output.innerHTML = "Average😢";
+      if(n==3) output.innerHTML = "Good👍";
+      if(n==4) output.innerHTML = "Better😁";
+      if(n==5) output.innerHTML = "Outstanding😎";
+  }
+   
+  // To remove the pre-applied styling
+  let length = stars.length;
+  function remove() {
+      for (let i = 0; i < length; i++) {
+          stars[i].className = "star";
+      }
+  }
+  
+  function openPopup() {
+      var popup = document.getElementById("myPopup");
+      popup.style.display = "block"; // Show the popup
+  }
+  
+  function closePopup() {
+      let popup = document.getElementById("myPopup");
+      popup.style.display = "none"; // Hide the popup
+  }
+  
+  function sendReview() {
+      closePopup(); // Close the popup
+      alert("Review Sent successfully!"); // Show the alert message
+  }
+  // comment box code
+  
+  const nameone = document.getElementById("name1");
+  const reviewBox = document.getElementById("suggestion");
+  const containerBox = document.getElementById("suggesstion-box");
+  let maindiv = document.createElement("div");
+  
+  function addSuggestion(){
+      if(name1.value === ' ' && reviewBox.value === ' '){
+          alert(" Please Enter valid information");
+      }
+      else{
+  
+          let maindiv = document.createElement("div");
+          containerBox.appendChild(maindiv);
+  
+          maindiv.className = "dynamic-maindiv";
+  
+          let divOne = document.createElement("div");
+          divOne.className = "dynamic-divone";
+  
+          let divthree = document.createElement("div");
+          divthree.className = "dynamic-divthree";
+  
+          let divTwo = document.createElement("div");
+          divTwo.className = "dynamic-divtwo";
+  
+          divOne.innerHTML = nameone.value;
+          divTwo.innerHTML = reviewBox.value;
+          maindiv.appendChild(divOne);
+          maindiv.appendChild(divTwo);
+          maindiv.appendChild(divthree);
+  
+          let showDate = document.createElement("span");
+          showDate.className = "dynamic-date";
+          showDate.textContent = new Date().toLocaleDateString();
+          divthree.appendChild(showDate);
+  
+      }
+      nameone.value = "";
+      reviewBox.value ="";
+      save();
+  }
+  function save(){
+      localStorage.setItem("data" , containerBox.innerHTML);
+  }
+  function showtask(){
+      containerBox.innerHTML = localStorage.getItem("data");
+  }
+  showtask();
+  // localStorage.clear();
+  </script>
+  
+
+</html>

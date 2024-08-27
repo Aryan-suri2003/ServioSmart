@@ -1,0 +1,350 @@
+body{
+    margin: 0px;
+    background-size:cover;
+    z-index: -1;
+    background-image: url(bg.jpg);
+}
+#nav{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    width:86.3%;
+    padding:1rem 6.5rem;
+    background-color: #315d73;
+    height: 30px;
+  }
+
+#nav h2{
+    color:#fff;
+    font-size: 1.7rem;
+  }  
+
+.sidebar {
+    width: 15%;
+    background-color:transparent;
+    height: 95vh;
+    backdrop-filter: blur(20px);
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    height: 50px;
+    width: 100%;
+    color: #ffffff;
+    font-weight: bolder;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  
+  li:hover {
+    background-color: #3787af;
+  }
+
+ #main{
+    width: 85%;
+    height: 95vh;
+ }
+
+
+  
+.details .one {
+    justify-content: space-evenly; /* Center the services */
+    gap: 1rem; /* Added gap between service cards */
+  }
+  
+  .details .service {
+    border: 2px solid #00eeff;
+    border-radius: 8px; /* Slightly increased border-radius for a softer look */
+    padding: 15px; /* Increased padding for better spacing */
+    width: 80%;
+    margin-left: 120px;
+    height: 17vh;
+    background-color: #294c5d; /* Added background color for better contrast */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+    margin-bottom: 20px;
+  }
+  
+  .details .service:hover {
+    transform: scale(1.05); /* Slightly scale the service card on hover */
+    box-shadow: 10px 20px 30px rgba(0, 238, 255, 0.2); /* Add shadow for a subtle lift effect */
+  }
+  
+  .details .serviceImage img {
+    width: 80%; /* Ensure the image fills its container */
+    height: 140px;
+    border-radius: 5px; /* Rounded corners for the image */
+  }
+  
+  .details h3 {
+    color: #000000;
+    margin-bottom: 10px; /* Increased spacing below the heading */
+    font-size: 1.5rem; /* Adjusted font size for better readability */
+  }
+  
+.details p {
+  color: #00eeff;
+  font-size: 1rem; /* Adjusted font size for better readability */
+  line-height: 1.5; /* Increased line height for better text spacing */
+}  
+
+#div1{
+    display: flex;
+    margin-top: 15px;
+}
+
+#img1{
+    width: 20%;
+    height: 16vh;
+}
+
+#img1-1-1{
+  width: 10%;
+  margin-top: 20px;
+  height: 16vh;
+}
+
+#img1-1-1 {
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Translate the element 50% to the right on hover */
+.service:hover #img1-1-1 {
+  transform: translateX(70%);
+}
+
+
+
+#div2{
+    display: flex;
+}
+#img2{
+    width: 20%;
+    height: 16vh;
+}
+
+#img2-1-1{
+  width: 10%;
+  margin-top: 20px;
+  height: 16vh;
+}
+
+#img2-1-1 {
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Translate the element 50% to the right on hover */
+.service:hover #img2-1-1 {
+  transform: translateX(70%);
+}
+
+
+
+#div3{
+    display: flex;
+}
+#img3{
+    width: 20%;
+    height: 16vh;
+}
+
+#img3-1-1{
+  width: 10%;
+  margin-top: 20px;
+  height: 16vh;
+}
+
+#img3-1-1 {
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Translate the element 50% to the right on hover */
+.service:hover #img3-1-1 {
+  transform: translateX(75%);
+}
+
+
+#div4{
+    display: flex;
+}
+#img4{
+    width: 20%;
+    height: 16vh;
+}
+
+
+#img4-1-1{
+  width: 10%;
+  margin-top: 20px;
+  height: 16vh;
+}
+
+#img4-1-1 {
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Translate the element 50% to the right on hover */
+.service:hover #img4-1-1 {
+  transform: translateX(80%);
+}
+
+
+/* Keyframe animation for image scaling */
+@keyframes scaleImage {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+/* Apply the scale animation to images */
+#img1, #img2, #img3, #img4{
+  animation: scaleImage 4s infinite; /* Adjust duration and repetition as needed */
+}
+/* Keyframe animation for flex container sliding */
+@keyframes slideIn {
+  from {
+      transform: translateX(-100%);
+  }
+  to {
+      transform: translateX(0);
+  }
+}
+
+/* Apply the sliding animation to div containers */
+#div1, #div2, #div3, #div4 {
+  animation: slideIn 1s ease-out;
+}
+
+/* Keyframe animations for text effects */
+@keyframes fadeInText {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes scaleText {
+  0% {
+      transform: scale(0.8);
+      opacity: 0;
+  }
+  50% {
+      transform: scale(1.1);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@keyframes bounceText {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-20px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+@keyframes combinedAnimation {
+  0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.8);
+  }
+  50% {
+      opacity: 1;
+      transform: translateY(-10px) scale(1.05);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+  }
+}
+
+/* Apply animations to text elements */
+#nav h2 {
+  animation: fadeInText 2s ease-out;
+}
+
+.details h3 {
+  animation: slideInLeft 1s ease-out;
+}
+
+.details p {
+  animation: scaleText 1s ease-out;
+}
+
+.service {
+  animation: bounceText 1s ease-out;
+}
+
+.combined-animation {
+  animation: combinedAnimation 1.5s ease-out;
+}
+
+#footer{
+  width: 100%;
+  height: 70px;
+  background-color: #315d73;
+  margin-top: 20px;
+}
+
+#a{
+  height: 40px;
+  width:40px;
+  border: 5px solid rgb(76, 76, 76);;
+  border-radius: 50%;
+  border-top: 5px solid #00eeff;
+  animation: animate 5s steps(1000) 0s infinite normal;
+  display: flex;
+  }
+  
+  #loading{
+  height:100vh ;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  position: relative;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  opacity: 0.75;
+  }
+  
+  @keyframes animate{
+  from{transform: rotate(0deg)}
+  to{transform: rotate(3600deg)}
+  }
+  
+  

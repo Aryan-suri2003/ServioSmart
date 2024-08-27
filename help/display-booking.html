@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url(bg.jpg);
+            background-size: cover;
+            color: #00eeff;
+        }
+        .booking-list {
+            margin-top: 20px;
+            backdrop-filter: blur(10px);
+        }
+        .booking-item {
+            border: 2px solid #00eeff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            position: relative;
+        }
+        .booking-item p {
+            margin: 5px 0;
+        }
+        .status-buttons {
+            margin-top: 10px;
+        }
+        .status-buttons button {
+            background-color: #00eeff;
+            color: rgb(0, 0, 0);
+            font-weight: bolder;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .status-buttons button:hover {
+            background-color: #0099cc;
+        }
+        .status {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Booking Details</h1>
+    <div id="booking-list" class="booking-list"></div>
+
+    <script>
+        function updateBookingStatus(index, status) {
+            const bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+            bookings[index].status = status;
+            localStorage.setItem('bookings', JSON.stringify(bookings));
+            const statusElement = document.getElementById(`status-${index}`);
+            statusElement.textContent = `Status: ${status}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const bookingListDiv = document.getElementById('booking-list');
+            const bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+
+            bookings.forEach((booking, index) => {
+                const bookingElement = document.createElement('div');
+                bookingElement.className = 'booking-item';
+                bookingElement.innerHTML = `
+                    <p><strong>Name:</strong> ${booking.name}</p>
+                    <p><strong>Email:</strong> ${booking.email}</p>
+                    <p><strong>Phone:</strong> ${booking.phone}</p>
+                    <p><strong>Address:</strong> ${booking.address}</p>
+                    <p><strong>Date:</strong> ${booking.date}</p>
+                    <p><strong>Time:</strong> ${booking.time}</p>
+                    <p class="status" id="status-${index}"><strong>Status:</strong> ${booking.status || 'Pending'}</p>
+                    <div class="status-buttons">
+                        <button onclick="updateBookingStatus(${index}, 'Accepted')">Accept</button>
+                        <button onclick="updateBookingStatus(${index}, 'Rejected')">Reject</button>
+                    </div>
+                   `;
+                bookingListDiv.appendChild(bookingElement);
+            });
+
+                });
+         // localStorage.clear();        
+    </script>
+</body>
+</html>

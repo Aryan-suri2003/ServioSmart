@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="eg.css">
+</head>
+<body>
+  <div id="main">
+    <div id="d1"></div>
+    <div id="line1"></div>
+    <div id="d2"></div>
+    <div id="line2"></div>
+    <div id="d3"></div>
+    <div id="line3"></div>
+    <div id="d4"></div>
+  </div>
+  <button id="but1">processed</button>
+  <button id="but2">processed</button>
+  <button id="but3">processed</button>
+  <script>
+    const button = document.getElementById('but1');
+    const d1 = document.getElementById('d1');
+    const line1 = document.getElementById('line1');
+    const d2 = document.getElementById('d2');
+
+    button.addEventListener('click', () => {
+      d1.style.backgroundColor = 'green';
+      line1.style.backgroundColor = 'green';
+      d2.style.backgroundColor = 'green';
+    });
+
+    const button1 = document.getElementById('but2');
+    const d3 = document.getElementById('d3');
+    const line2 = document.getElementById('line2');
+
+    button1.addEventListener('click', () => {
+      line2.style.backgroundColor = 'green';
+      d3.style.backgroundColor = 'green';
+    });
+
+    const button2 = document.getElementById('but3');
+    const d4 = document.getElementById('d4');
+    const line3 = document.getElementById('line3');
+
+    button2.addEventListener('click', () => {
+      line3.style.backgroundColor = 'green';
+      d4.style.backgroundColor = 'green';
+    });
+  </script>
+</body>
+</html>

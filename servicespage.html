@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sidebar</title>
+  <link rel="stylesheet" href="servicespage.css">
+</head>
+<body onload="myfunction()">
+  <div id="loading"><div id="a"></div></div>
+  <div id="nav">
+    <h2 class="fade-in">ServioSmart</h2>
+  </div>  
+  <div style="display: flex;"> 
+    <div class="sidebar">
+      <ul>
+        <li id="services" style="background-color: #4cbaf1;">Services</li>
+        <li>Payment</li>
+        <li>History</li>
+        <li>Tracking</li>
+        <li>Help</li>
+        <li id="reviews">
+          <a href="dash.html" style="text-decoration: none; color: rgb(255, 255, 255);">Reviews</a>
+        </li>
+      </ul>
+    </div>
+    <div id="main">
+      <div class="details">
+        <div class="one">
+          <a href="./help/electrician.html" style="text-decoration: none;"><div class="service" id="div1">
+            <div class="serviceImage" id="img1">
+              <img src="Images/service1.png" alt="">
+            </div>
+            <div id="img-1-1">
+              <h3 class="slide-in-left">Electricity Management</h3>
+              <p class="scale-text">Efficiently manage your electricity usage, schedule maintenance, and track your consumption in real-time.</p>
+            </div>
+            <div id="img1-1-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="190" height="100" fill="white" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+              </svg>
+            </div>
+          </div></a>
+          <a href="./help/index.html" style="text-decoration: none;"><div class="service" id="div2">
+            <div class="serviceImage" id="img2">
+              <img src="Images/service2.jpg" alt="">
+            </div>
+            <div>
+              <h3 class="slide-in-left">Plumbing services</h3>
+              <p class="scale-text">Quickly book expert plumbers for repairs, installations, or regular maintenance to keep your plumbing in top condition.</p>
+            </div>
+            <div id="img2-1-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="110" height="100" fill="white" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+              </svg>
+            </div>
+          </div></a>
+          <a href="./help/maintainance.html" style="text-decoration: none;"><div class="service" id="div3">
+            <div class="serviceImage" id="img3">
+              <img src="Images/service3.jpg" alt="">
+            </div>
+            <div>
+              <h3 class="slide-in-left">Maintenance Scheduling</h3>
+              <p class="scale-text">Keep your home or business running smoothly with scheduled maintenance for all essential utilities.</p>
+            </div>
+            <div id="img3-1-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="260" height="100" fill="white" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+              </svg>
+            </div>
+          </div></a>
+          <div class="service" id="div4">
+            <div class="serviceImage" id="img4">
+              <img src="Images/service4.png" alt="">
+            </div>
+          <a href="help/emergency.html" style="text-decoration: none;">  <div>
+              <h3 class="slide-in-left">Emergency Repairs</h3>
+              <p class="scale-text">Get immediate assistance for urgent repairs, ensuring that issues are addressed promptly and effectively.</p>
+            </div></a>
+            <div id="img4-1-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" fill="white" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+              </svg>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div id="footer" style="color: aliceblue; font-weight: bolder; display: flex; align-items: center; justify-content: center;">Copyright Since 2022</div>  
+ <script>
+  var preloader = document.getElementById('loading');
+  function myfunction(){
+  preloader.style.display = 'none';
+  }
+ </script> 
+</body>
+</html>
