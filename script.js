@@ -8,3 +8,4 @@ bar.addEventListener("click",()=>{
     item.style.right = "-250px";
   }
 })
+

@@ -3,6 +3,10 @@
 <head>
   <title>Sidebar</title>
   <link rel="stylesheet" href="servicespage.css">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
 </head>
 <body onload="myfunction()">
   <div id="loading"><div id="a"></div></div>
@@ -33,11 +37,6 @@
               <h3 class="slide-in-left">Electricity Management</h3>
               <p class="scale-text">Efficiently manage your electricity usage, schedule maintenance, and track your consumption in real-time.</p>
             </div>
-            <div id="img1-1-1">
-              <svg xmlns="http://www.w3.org/2000/svg" width="190" height="100" fill="white" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-              </svg>
-            </div>
           </div></a>
           <a href="./help/index.html" style="text-decoration: none;"><div class="service" id="div2">
             <div class="serviceImage" id="img2">
@@ -46,11 +45,6 @@
             <div>
               <h3 class="slide-in-left">Plumbing services</h3>
               <p class="scale-text">Quickly book expert plumbers for repairs, installations, or regular maintenance to keep your plumbing in top condition.</p>
-            </div>
-            <div id="img2-1-1">
-              <svg xmlns="http://www.w3.org/2000/svg" width="110" height="100" fill="white" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-              </svg>
             </div>
           </div></a>
           <a href="./help/maintainance.html" style="text-decoration: none;"><div class="service" id="div3">
@@ -61,11 +55,6 @@
               <h3 class="slide-in-left">Maintenance Scheduling</h3>
               <p class="scale-text">Keep your home or business running smoothly with scheduled maintenance for all essential utilities.</p>
             </div>
-            <div id="img3-1-1">
-              <svg xmlns="http://www.w3.org/2000/svg" width="260" height="100" fill="white" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-              </svg>
-            </div>
           </div></a>
           <div class="service" id="div4">
             <div class="serviceImage" id="img4">
@@ -75,11 +64,6 @@
               <h3 class="slide-in-left">Emergency Repairs</h3>
               <p class="scale-text">Get immediate assistance for urgent repairs, ensuring that issues are addressed promptly and effectively.</p>
             </div></a>
-            <div id="img4-1-1">
-              <svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" fill="white" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-              </svg>
-            </div>
           </div>
           
         </div>
@@ -87,7 +71,35 @@
     </div>
   </div>
 
-<div id="footer" style="color: aliceblue; font-weight: bolder; display: flex; align-items: center; justify-content: center;">Copyright Since 2022</div>  
+<div id="footer" style="color: aliceblue; font-weight: bolder; display: flex; align-items: center; justify-content: center; margin-top: 100px;">
+  <div id="d1" style="margin: 150px;">
+    <h2 style="font-weight: bolder;">About Us</h2>
+    <p style="font-weight: 300;">Our utility management system helps you efficiently manage your home and business utilities.</p>
+  </div>
+
+
+  <div id="d2">
+    <h2>Quick Links</h2>
+    <a id="#" style="text-decoration: none; color: aliceblue; font-weight: 300;"href="index.html" style="font-weight: 300;">Home</a>
+    <br>
+    <a id="#" style="text-decoration: none; color: aliceblue; font-weight: 300;" href="#nav" style="font-weight: 300;">Back To Top</a>
+    <br>
+    <a id="#" style="text-decoration: none; color: aliceblue; font-weight: 300;"  href="index.html#footer" style="font-weight: 300;">Contact Us</a>
+  </div>
+  <div id="d3">
+    <h2>Follow Us</h2>
+            <div class="social-icons">
+                <a href="/https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/?lang=en"><i class="fab fa-twitter"></i></a>
+                <a href="https://in.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="/https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            </div>
+  </div>
+</div> 
+
+<div style="height: 60px; width: 100%; background-color:#315d73 ; margin: none; display: flex; justify-content: center; align-items: center; border-top: 1px solid black;">
+  <p id="copy">&copy; 2024 Utility Management System. All rights reserved.</p>
+</div>
  <script>
   var preloader = document.getElementById('loading');
   function myfunction(){

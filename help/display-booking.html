@@ -13,24 +13,43 @@
             background-image: url(bg.jpg);
             background-size: cover;
             color: #00eeff;
+            transition: background-color 0.3s ease;
         }
+
         .booking-list {
             margin-top: 20px;
             backdrop-filter: blur(10px);
+            opacity: 0;
+            animation: fadeIn 1s forwards;
         }
+
         .booking-item {
             border: 2px solid #00eeff;
             padding: 15px;
             margin-bottom: 10px;
             border-radius: 10px;
             position: relative;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 0.5s forwards;
         }
+
+        .booking-item:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        .booking-item:nth-child(odd) {
+            animation-delay: 0.4s;
+        }
+
         .booking-item p {
             margin: 5px 0;
         }
+
         .status-buttons {
             margin-top: 10px;
         }
+
         .status-buttons button {
             background-color: #00eeff;
             color: rgb(0, 0, 0);
@@ -40,13 +59,37 @@
             padding: 5px 10px;
             cursor: pointer;
             margin-right: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
+
         .status-buttons button:hover {
             background-color: #0099cc;
+            transform: scale(1.05);
         }
+
         .status {
             font-weight: bold;
             margin-top: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -82,12 +125,10 @@
                         <button onclick="updateBookingStatus(${index}, 'Accepted')">Accept</button>
                         <button onclick="updateBookingStatus(${index}, 'Rejected')">Reject</button>
                     </div>
-                   `;
+                `;
                 bookingListDiv.appendChild(bookingElement);
             });
-
-                });
-         // localStorage.clear();        
+        });
     </script>
 </body>
 </html>
