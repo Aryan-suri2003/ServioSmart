@@ -210,6 +210,11 @@ body {
     color: #7aadc7;
     animation: headerFadeIn 1s ease-out;
   }
+
+  #choose{
+    height: 30px;
+    width: 50%;
+  }
   
   @keyframes headerFadeIn {
     from {

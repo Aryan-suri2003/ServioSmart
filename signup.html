@@ -6,7 +6,9 @@
   <link rel="stylesheet" href="login.css">
 
 </head>
-<body>
+<body onload="myfunction()">
+
+  <div id="loading"><div id="a"></div></div>
   <div id="nav">
     <h2 class="fade-in">ServioSmart</h2>
   </div>   
@@ -24,7 +26,7 @@
     </div>
     <div class="field username-field">
       <div class="input-field">
-        <input type="name" placeholder="Enter your Username" class="username" required />
+        <input type="name" placeholder="Enter your Username" id="username" required />
       </div>
       <span class="error name-error">
         <i class="bx bx-error-circle error-icon"></i>
@@ -75,8 +77,16 @@
   </form>
 </div>
 
-<!-- partial -->
+
   <script  src="script1.js"></script>
+  <script>
+    document.getElementById("signup1").addEventListener('click', function() {
+            const username = document.getElementById("username").value;
+            localStorage.setItem('username', username);
+            window.location.href = 'receiver.html';
+        });
+
+  </script>
 
 </body>
 </html>

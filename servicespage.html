@@ -7,6 +7,82 @@
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
+  <style>
+    /* Basic styling for the profile section */
+    .container {
+      position: relative;
+      width: fit-content; /* Adjust as needed */
+      margin: 20px; 
+    }
+
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+      color: white;
+      border-bottom: 1px solid rgb(0, 238, 255);
+      position: relative;
+    }
+
+    .profile-section img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .profile-section p {
+      margin: 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      height: 100px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      backdrop-filter: blur(10px);
+      border: 2px solid #00c8ff;
+      padding: 50px;
+      z-index: 1000;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .popup input[type="file"] {
+      margin-bottom: 10px;
+    }
+
+    .popup button {
+      padding: 5px 10px;
+      border: none;
+      background-color: #294c5d;
+      color: rgb(255, 255, 255);
+      font-weight: bolder;
+      cursor: pointer;
+      border-radius:20px ;
+      border: 1px  solid rgb(0, 247, 255);
+    }
+
+    .popup button:hover {
+      background-color: rgb(8, 219, 243);
+    }
+
+    .popup .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+  </style>
 </head>
 <body onload="myfunction()">
   <div id="loading"><div id="a"></div></div>
@@ -15,6 +91,11 @@
   </div>  
   <div style="display: flex;"> 
     <div class="sidebar">
+      <div class="profile-section">
+        <img id="profileImage" src="https://www.gravatar.com/avatar/00000000000000000000000000000000" alt="Profile Picture" onclick="showPopup()">
+        <p id="Username">JohnDoe</p>
+      </div>
+      
       <ul>
         <li id="services" style="background-color: #4cbaf1;">Services</li>
         <li>Payment</li>
@@ -27,84 +108,120 @@
       </ul>
     </div>
     <div id="main">
-      <div class="details">
-        <div class="one">
-          <a href="./help/electrician.html" style="text-decoration: none;"><div class="service" id="div1">
-            <div class="serviceImage" id="img1">
-              <img src="Images/service1.png" alt="">
+        <div class="details">
+            <div class="one">
+              <a href="./help/electrician.html" style="text-decoration: none;"><div class="service" id="div1">
+                <div class="serviceImage" id="img1">
+                  <img src="Images/service1.png" alt="">
+                </div>
+                <div id="img-1-1">
+                  <h3 class="slide-in-left">Electricity Management</h3>
+                  <p class="scale-text">Efficiently manage your electricity usage, schedule maintenance, and track your consumption in real-time.</p>
+                </div>
+              </div></a>
+              <a href="./help/index.html" style="text-decoration: none;"><div class="service" id="div2">
+                <div class="serviceImage" id="img2">
+                  <img src="Images/service2.jpg" alt="">
+                </div>
+                <div>
+                  <h3 class="slide-in-left">Plumbing services</h3>
+                  <p class="scale-text">Quickly book expert plumbers for repairs, installations, or regular maintenance to keep your plumbing in top condition.</p>
+                </div>
+              </div></a>
+              <a href="./help/maintainance.html" style="text-decoration: none;"><div class="service" id="div3">
+                <div class="serviceImage" id="img3">
+                  <img src="Images/service3.jpg" alt="">
+                </div>
+                <div>
+                  <h3 class="slide-in-left">Maintenance Scheduling</h3>
+                  <p class="scale-text">Keep your home or business running smoothly with scheduled maintenance for all essential utilities.</p>
+                </div>
+              </div></a>
+              <div class="service" id="div4">
+                <div class="serviceImage" id="img4">
+                  <img src="Images/service4.png" alt="">
+                </div>
+              <a href="help/emergency.html" style="text-decoration: none;">  <div>
+                  <h3 class="slide-in-left">Emergency Repairs</h3>
+                  <p class="scale-text">Get immediate assistance for urgent repairs, ensuring that issues are addressed promptly and effectively.</p>
+                </div></a>
+              </div>
+              
             </div>
-            <div id="img-1-1">
-              <h3 class="slide-in-left">Electricity Management</h3>
-              <p class="scale-text">Efficiently manage your electricity usage, schedule maintenance, and track your consumption in real-time.</p>
-            </div>
-          </div></a>
-          <a href="./help/index.html" style="text-decoration: none;"><div class="service" id="div2">
-            <div class="serviceImage" id="img2">
-              <img src="Images/service2.jpg" alt="">
-            </div>
-            <div>
-              <h3 class="slide-in-left">Plumbing services</h3>
-              <p class="scale-text">Quickly book expert plumbers for repairs, installations, or regular maintenance to keep your plumbing in top condition.</p>
-            </div>
-          </div></a>
-          <a href="./help/maintainance.html" style="text-decoration: none;"><div class="service" id="div3">
-            <div class="serviceImage" id="img3">
-              <img src="Images/service3.jpg" alt="">
-            </div>
-            <div>
-              <h3 class="slide-in-left">Maintenance Scheduling</h3>
-              <p class="scale-text">Keep your home or business running smoothly with scheduled maintenance for all essential utilities.</p>
-            </div>
-          </div></a>
-          <div class="service" id="div4">
-            <div class="serviceImage" id="img4">
-              <img src="Images/service4.png" alt="">
-            </div>
-          <a href="help/emergency.html" style="text-decoration: none;">  <div>
-              <h3 class="slide-in-left">Emergency Repairs</h3>
-              <p class="scale-text">Get immediate assistance for urgent repairs, ensuring that issues are addressed promptly and effectively.</p>
-            </div></a>
           </div>
-          
         </div>
-      </div>
+    
     </div>
   </div>
 
-<div id="footer" style="color: aliceblue; font-weight: bolder; display: flex; align-items: center; justify-content: center; margin-top: 100px;">
-  <div id="d1" style="margin: 150px;">
-    <h2 style="font-weight: bolder;">About Us</h2>
-    <p style="font-weight: 300;">Our utility management system helps you efficiently manage your home and business utilities.</p>
+  <div id="footer" style="color: aliceblue; font-weight: bolder; display: flex; align-items: center; justify-content: center; margin-top: 100px;">
+    <div id="d1" style="margin: 150px;">
+        <h2 style="font-weight: bolder;">About Us</h2>
+        <p style="font-weight: 300;">Our utility management system helps you efficiently manage your home and business utilities.</p>
+      </div>
+    
+    
+      <div id="d2">
+        <h2>Quick Links</h2>
+        <a id="#" style="text-decoration: none; color: aliceblue; font-weight: 300;"href="index.html" style="font-weight: 300;">Home</a>
+        <br>
+        <a id="#" style="text-decoration: none; color: aliceblue; font-weight: 300;" href="#nav" style="font-weight: 300;">Back To Top</a>
+        <br>
+        <a id="#" style="text-decoration: none; color: aliceblue; font-weight: 300;"  href="index.html#footer" style="font-weight: 300;">Contact Us</a>
+      </div>
+      <div id="d3">
+        <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/?lang=en"><i class="fab fa-twitter"></i></a>
+                    <a href="https://in.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                </div>
+      </div>
+    </div> 
+    
+    <div style="height: 60px; width: 100%; background-color:#315d73 ; margin: none; display: flex; justify-content: center; align-items: center; border-top: 1px solid black;">
+      <p id="copy">&copy; 2024 Utility Management System. All rights reserved.</p>
+    </div>
+  </div> 
+
+  <!-- Popup for choosing a new profile picture -->
+  <div id="popup" class="popup">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <input type="file" id="fileInput" accept="image/*">
+    <button onclick="changePicture()">Change Picture</button>
   </div>
 
+  <script>
+    var preloader = document.getElementById('loading');
+    function myfunction() {
+      preloader.style.display = 'none';
+    }
+    
+    const username = localStorage.getItem('username');
+    document.getElementById("Username").innerHTML = username;
+    
+    function showPopup() {
+      document.getElementById('popup').style.display = 'block';
+    }
 
-  <div id="d2">
-    <h2>Quick Links</h2>
-    <a id="#" style="text-decoration: none; color: aliceblue; font-weight: 300;"href="index.html" style="font-weight: 300;">Home</a>
-    <br>
-    <a id="#" style="text-decoration: none; color: aliceblue; font-weight: 300;" href="#nav" style="font-weight: 300;">Back To Top</a>
-    <br>
-    <a id="#" style="text-decoration: none; color: aliceblue; font-weight: 300;"  href="index.html#footer" style="font-weight: 300;">Contact Us</a>
-  </div>
-  <div id="d3">
-    <h2>Follow Us</h2>
-            <div class="social-icons">
-                <a href="/https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://x.com/?lang=en"><i class="fab fa-twitter"></i></a>
-                <a href="https://in.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                <a href="/https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-            </div>
-  </div>
-</div> 
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
 
-<div style="height: 60px; width: 100%; background-color:#315d73 ; margin: none; display: flex; justify-content: center; align-items: center; border-top: 1px solid black;">
-  <p id="copy">&copy; 2024 Utility Management System. All rights reserved.</p>
-</div>
- <script>
-  var preloader = document.getElementById('loading');
-  function myfunction(){
-  preloader.style.display = 'none';
-  }
- </script> 
+    function changePicture() {
+      const fileInput = document.getElementById('fileInput');
+      const profileImage = document.getElementById('profileImage');
+      
+      if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          profileImage.src = e.target.result;
+        }
+        reader.readAsDataURL(fileInput.files[0]);
+      }
+      closePopup(); // Close the popup after changing the picture
+    }
+  </script> 
 </body>
 </html>

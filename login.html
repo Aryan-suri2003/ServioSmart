@@ -50,6 +50,15 @@
 
 <!-- partial -->
   <script  src="script2.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+            // Check if the page is loaded from the history (back button)
+            if (performance.navigation.type === performance.navigation.TYPE_BACK_FORWARD) {
+                // Redirect to the landing page
+                window.location.href = 'index.html';
+        }
+});
+  </script>
   
 
 </body>
