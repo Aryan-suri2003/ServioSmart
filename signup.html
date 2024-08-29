@@ -24,15 +24,7 @@
         <p class="error-text">Please enter a valid Name</p>
       </span>
     </div>
-    <div class="field username-field">
-      <div class="input-field">
-        <input type="name" placeholder="Enter your Username" id="username" required />
-      </div>
-      <span class="error name-error">
-        <i class="bx bx-error-circle error-icon"></i>
-        <p class="error-text">Please enter a valid Username</p>
-      </span>
-    </div>
+    
     <div class="field email-field">
       <div class="input-field">
         <input type="email" placeholder="Enter your email" class="email" required />
@@ -79,14 +71,7 @@
 
 
   <script  src="script1.js"></script>
-  <script>
-    document.getElementById("signup1").addEventListener('click', function() {
-            const username = document.getElementById("username").value;
-            localStorage.setItem('username', username);
-            window.location.href = 'receiver.html';
-        });
 
-  </script>
 
 </body>
 </html>
