@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Sidebar</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="dash.css">
 </head>
 <body>
@@ -12,7 +13,7 @@
   <div class="sidebar">
     <ul>
       <li id="services">  <a href="servicespage.html" style="text-decoration: none; color: rgb(255, 255, 255);"> Services</a></li>
-      <li id="payment">  <a href="paymentpage.html" style="text-decoration: none; color: rgb(255, 255, 255);"> Payment</a></li>
+      <li>Payment</li>
       <li>History</li>
       <li>Tracking</li>
       <li>Help</li>
@@ -21,7 +22,7 @@
   </div>
   <div id="page">
     <div></div>
-    <div id="first-div">
+    <div id="first-div" data-aos="fade-left">
       <div id="one-side">
         <div id="text-second">
           Have you used this website<br>
@@ -124,7 +125,7 @@
       </div>
     </div>
   
-    <div id="commentBox">
+    <div id="commentBox" >
       <div id="commentHead">
         <h2 style="color: rgb(255, 255, 255);">Ratings & Reviews</h2>
         <hr>
@@ -246,6 +247,13 @@
   showtask();
   // localStorage.clear();
   </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 300,
+        duration: 1000,
+      });
+    </script>
   
 
 </html>

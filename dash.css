@@ -262,6 +262,7 @@ html {
 }
 
 
+
 #second-div {
     display: flex;
     overflow: hidden;
@@ -520,17 +521,34 @@ html {
 #commentBox {
     border: 2px solid#25b8d8;
     border-radius: 20px;
-    height: 30vh;
+    height: 38vh;
     width: 90%;
     margin: 10vh 5% 0 5%;
-    overflow: hidden;
+    overflow: scroll;
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 1px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: black;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: black;
+  }
+  
 
 #commentHead {
     height: 30%;
 }
 
 #comments {
+    padding: 4px;
     height: 70%;
     overflow: hidden;
     overflow-y: scroll;
